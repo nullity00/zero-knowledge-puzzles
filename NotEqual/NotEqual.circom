@@ -11,6 +11,12 @@ pragma circom 2.1.4;
 template NotEqual() {
 
     // Your code here.
+    signal input a[2];
+    signal output c;
+
+    signal diff <== a[0] - a[1];
+    signal temp <-- diff ? 1 : 0;
+    c <== temp;
    
 }
 
