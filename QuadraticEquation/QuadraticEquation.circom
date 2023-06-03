@@ -14,9 +14,9 @@ template QuadraticEquation() {
     signal output out;  // If res is correct , then return 1 , else 0 . 
 
     // your code here
-    signal sq <-- x*x;
-    signal ax2 <-- a*sq;
-    signal bx <-- b*x;
+    signal sq <== x*x;
+    signal ax2 <== a*sq;
+    signal bx <== b*x;
     signal sum <== ax2 + bx + c;
     component equal = IsEqual();
     equal.in[0] <== sum;

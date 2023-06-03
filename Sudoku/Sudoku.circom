@@ -114,8 +114,10 @@ template Sudoku () {
 
     signal sum <== coleq[0].out + coleq[1].out + coleq[2].out + coleq[3].out + roweq[0].out + roweq[1].out + roweq[2].out + roweq[3].out;
 
-    signal temp <-- sum == 8 ? 1 : 0;
-    out <== temp;
+    component iseq = IsEqual();
+    iseq.in[0] <== sum;
+    iseq.in[1] <== 8;
+    out <== iseq.out;
    
 }
 

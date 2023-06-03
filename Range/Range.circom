@@ -40,6 +40,7 @@ template Range() {
     signal input a;
     signal input lowerbound;
     signal input upperbound;
+    signal output out;
 
     component lt1 = LessThan(8);
     lt1.in[0] <== a;
@@ -49,10 +50,8 @@ template Range() {
     lt2.in[0] <== lowerbound;
     lt2.in[1] <== a;
 
-    signal temp <-- lt1.out * lt2.out;
-    signal output out;
-    out <== temp;
-   
+    out <== lt1.out * lt2.out;
+ 
 }
 
 component main  = Range();
